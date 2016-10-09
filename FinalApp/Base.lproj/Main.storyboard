@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uWy-jE-mNU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uWy-jE-mNU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AU6-6x-HUt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pWV-2s-HSO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hxs-Hc-WHu">
@@ -21,24 +21,13 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="86" width="400" height="234"/>
+                                    <rect key="frame" x="0.0" y="86" width="375" height="234"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="uWy-jE-mNU" id="GRy-bL-TEJ"/>
                                     <outlet property="delegate" destination="uWy-jE-mNU" id="nLr-w4-q4u"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0vI-NA-xvh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <animations/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="42" width="400" height="44"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="uWy-jE-mNU" id="GhI-3q-w8x"/>
-                                </connections>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Buo-ar-gKL">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -46,7 +35,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="380" width="56" height="21"/>
+                                    <rect key="frame" x="16" y="347" width="56" height="21"/>
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="p56-EY-9ge">
@@ -54,33 +43,45 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="409" width="400" height="191"/>
+                                    <rect key="frame" x="0.0" y="376" width="375" height="291"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="uWy-jE-mNU" id="fqW-XI-1WU"/>
                                     <outlet property="delegate" destination="uWy-jE-mNU" id="Dfy-je-f3T"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0vI-NA-xvh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="42" width="375" height="44"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="uWy-jE-mNU" id="GhI-3q-w8x"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Hxs-Hc-WHu"/>
-                                <exclude reference="0vI-NA-xvh"/>
                                 <exclude reference="Buo-ar-gKL"/>
                                 <exclude reference="p56-EY-9ge"/>
+                                <exclude reference="0vI-NA-xvh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Hxs-Hc-WHu"/>
-                                <include reference="0vI-NA-xvh"/>
                                 <include reference="Buo-ar-gKL"/>
                                 <include reference="p56-EY-9ge"/>
+                                <include reference="0vI-NA-xvh"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="fistTableView" destination="Hxs-Hc-WHu" id="AHh-rd-oP4"/>
                         <outlet property="searchBar" destination="0vI-NA-xvh" id="aLS-Wu-NCP"/>
@@ -89,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="957-RH-806" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1374" y="206"/>
+            <point key="canvasLocation" x="-1374.75" y="205.5"/>
         </scene>
         <!--Registration View-->
         <scene sceneID="nbv-xL-xcZ">

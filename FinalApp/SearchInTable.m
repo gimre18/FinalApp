@@ -17,6 +17,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     fistTableView.delegate = self;
     fistTableView.dataSource = self;
+    secondTableView.dataSource = self ;
+    secondTableView.delegate = self;
     searchBar.delegate = self;
     
     [self retriveData];
@@ -32,20 +34,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//    return 1;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-   
+    if (tableView == self.fistTableView) {
+        if (isFiltered) {
+           return [filteredString count];
+          
+            
+        }
+        return [GymNameArray count];
+       
+
+    }
+        return [addedGyms count];
     
     
-    if (isFiltered) {
-        return [filteredString count];
     
     }
-    return [GymNameArray count];
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"cellID";
@@ -57,20 +65,24 @@
                 UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    if (!isFiltered) {
-        cell.textLabel.text =[GymNameArray objectAtIndex:indexPath.row];
-    }
+    if (tableView == self.fistTableView) {
+        if (!isFiltered) {
+            cell.textLabel.text =[GymNameArray objectAtIndex:indexPath.row];
+        }
         else cell.textLabel.text =[filteredString objectAtIndex:indexPath.row];
-    
-    //----
+        
+        //----
+        
+        
+    }   else {
+         cell.textLabel.text =[addedGyms objectAtIndex:indexPath.row];
+    }
     
     return cell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:
-(NSIndexPath *)indexPath{
     
 }
+
+
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -88,6 +100,18 @@
         }
     }
     [fistTableView reloadData];
+    
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Gym *name = [GymArray objectAtIndex:indexPath.row];
+
+    [addedGyms addObject:name.name];
+    
+    [secondTableView reloadData];
+    
 }
 
 - (void) retriveData
