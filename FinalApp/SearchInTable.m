@@ -37,9 +37,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-   if (tableView = self.secondTableView) {
-        return [addedGyms.count];
-    }
+   
     
     
     if (isFiltered) {
