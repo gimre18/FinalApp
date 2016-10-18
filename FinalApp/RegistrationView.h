@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "RegistrationView.h"
+#import "User.h"
+#import "GlobalVars.h"
+
+
 
 @interface RegistrationView : UIViewController
 
@@ -23,6 +27,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *PhoneNumber;
 @property NSURLConnection *postConnection;
+
+@property (nonatomic, strong) NSMutableDictionary *jjson;
+@property (nonatomic, strong) NSMutableArray *userArray;
+
+
 
 - (IBAction)Registration:(UIButton *)sender;
 

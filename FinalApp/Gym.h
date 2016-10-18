@@ -13,10 +13,13 @@
 @property (nonatomic, strong) NSString * ID;
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * street;
+@property (nonatomic, strong) NSString * userID;
+@property (nonatomic, strong) NSString * gymID;
+
 
 - (id) initWithGymID: (NSString *) gID andname: (NSString *) gName andstreet: (NSString *) uStreet;
 
-
+- (id) initWithgetGymID: (NSString *) gID anduserID: (NSString *) guserID andGymID: (NSString *) gGymID;
 
 
 

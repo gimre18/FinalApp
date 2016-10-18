@@ -7,10 +7,11 @@
 //
 
 #import "SearchInTable.h"
+#import "GlobalVars.h"
 
 @implementation SearchInTable
 
-@synthesize GymArray, fistTableView, json,searchBar, isFiltered, filteredString, GymNameArray, totalArray, secondTableView, addedGyms;
+@synthesize GymArray, fistTableView, json,json1,searchBar, isFiltered, filteredString, GymNameArray, totalArray, secondTableView, addedGyms;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -112,6 +113,36 @@
     
     [secondTableView reloadData];
     
+    
+    
+    
+   NSLog(@"%@", [GlobalVars getUser_ID]);
+    
+   NSDictionary *inputData = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [GlobalVars getUser_ID], @"UserId",
+                                name.ID, @"GymId",
+                              nil];
+    
+    
+    
+    
+    NSError *error = nil;
+    NSData *jsonInputData = [NSJSONSerialization dataWithJSONObject:inputData options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonInputString = [[NSString alloc] initWithData:jsonInputData encoding:NSUTF8StringEncoding];
+    
+    NSURL *url = [NSURL URLWithString:@"http://users.atw.hu/pelda-service/app/UsersInGym/postInUserInGym.php"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:[jsonInputString dataUsingEncoding:NSUTF8StringEncoding]];
+    NSURLResponse *response;
+    NSError *err;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    
+    
+    NSLog(@"megvoltaposzt");
+
+    
 }
 
 - (void) retriveData
@@ -122,13 +153,13 @@
     
     NSData *data = [NSData dataWithContentsOfURL: url];
     
-    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    json1 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
     GymArray = [[NSMutableArray alloc]init];
     GymNameArray = [[NSMutableArray alloc]init];
     addedGyms = [[NSMutableArray alloc] init];
     
-    for (NSMutableDictionary *d in [json objectForKey:@"response"]) {
+    for (NSMutableDictionary *d in [json1 objectForKey:@"response"]) {
         
         Gym *actGym = [[Gym alloc] initWithGymID:[d objectForKey:@"id"] andname:[d objectForKey:@"name"] andstreet:[d objectForKey:@"street"]];
         
@@ -139,17 +170,52 @@
         
         [GymNameArray addObject: name ];
         
-        totalArray = [NSArray arrayWithArray:GymNameArray];
+       
        
     }
-    
+   
+    [self deleteExistedGym];
 }
 
 
+-(void) deleteExistedGym {
 
+    NSURL * url = [ NSURL URLWithString: @"http://users.atw.hu/pelda-service/app/UsersInGym/getUsersInGym.php"];
+    
+    NSData *data = [NSData dataWithContentsOfURL: url];
+    
+    json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    
+    
+    for (NSMutableDictionary *d in [json objectForKey:@"response"]) {
+        
+        Gym *actGym = [[Gym alloc] initWithgetGymID:[d objectForKey:@"id"]  anduserID:[d objectForKey:@"UserId"]  andGymID:[d objectForKey:@"GymId"]];
+        
+                       NSLog(@"%@ %@", actGym.userID, actGym.gymID);
+        
+        NSLog(@"userid:%@   aktuális id: %@",[GlobalVars getUser_ID], actGym.userID);
+        if ([[GlobalVars getUser_ID] isEqualToString:actGym.userID]) {
+            NSLog(@"egyezett akt userid: %@",actGym.gymID);
+            for (int i = 0; i < [GymArray count]; i++) {
+                Gym *item = [GymArray objectAtIndex:i];
+                NSLog(@"");
+                if ([item.ID isEqualToString:actGym.gymID])  {
+                    NSLog(@"mit illeszt be: %@", item.ID);
+                    [addedGyms addObject: item.name];
+                    [GymArray removeObject:item];
+                }
+                
+                
+        }
+       
+}
 
-
-
+}
+    [fistTableView reloadData];
+    [secondTableView reloadData];
+    
+}
 
 
 

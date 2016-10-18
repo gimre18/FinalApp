@@ -9,7 +9,7 @@
 #import "Gym.h"
 
 @implementation Gym
-@synthesize ID,name,street;
+@synthesize ID,name,street,userID,gymID;
 
 
 - (id) initWithGymID: (NSString *) gID andname: (NSString *) gName andstreet: (NSString *) gStreet
@@ -27,6 +27,24 @@
     
     return self;
 }
+
+
+- (id) initWithgetGymID: (NSString *) gID anduserID: (NSString *) guserID andGymID: (NSString *) gGymID
+{
+    self = [super init];
+    
+    if (self) {
+        
+        
+        ID = gID;
+        userID = guserID;
+        gymID = gGymID;
+    }
+    
+    return self;
+}
+
+
 
 
 @end

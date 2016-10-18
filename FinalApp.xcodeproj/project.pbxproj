@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6702D5EE1DA69CE90025D659 /* Pickerview.m in Sources */ = {isa = PBXBuildFile; fileRef = 6702D5ED1DA69CE90025D659 /* Pickerview.m */; };
+		671513811DAA91C000FC0E26 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 671513801DAA91C000FC0E26 /* User.m */; };
 		67595F511DA95F750023B31D /* SearchInTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 67595F501DA95F750023B31D /* SearchInTable.m */; };
 		676DA0621DA69C3B0061B18C /* Gym.m in Sources */ = {isa = PBXBuildFile; fileRef = 676DA0611DA69C3B0061B18C /* Gym.m */; };
+		6790831C1DAECF1D006DA5E7 /* LogInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6790831B1DAECF1D006DA5E7 /* LogInView.m */; };
+		6790831F1DAFBB8D006DA5E7 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6790831E1DAFBB8D006DA5E7 /* MapView.m */; };
+		679083211DAFBBFC006DA5E7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679083201DAFBBFC006DA5E7 /* MapKit.framework */; };
 		67A1B69F1DA57B9F002DFB08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A1B69E1DA57B9F002DFB08 /* main.m */; };
 		67A1B6A21DA57B9F002DFB08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A1B6A11DA57B9F002DFB08 /* AppDelegate.m */; };
 		67A1B6A51DA57B9F002DFB08 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A1B6A41DA57B9F002DFB08 /* ViewController.m */; };
@@ -18,6 +22,7 @@
 		67A1B6AD1DA57B9F002DFB08 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67A1B6AB1DA57B9F002DFB08 /* LaunchScreen.xib */; };
 		67A1B6B91DA57B9F002DFB08 /* FinalAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A1B6B81DA57B9F002DFB08 /* FinalAppTests.m */; };
 		67A1B6C71DA58611002DFB08 /* RegistrationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A1B6C61DA58611002DFB08 /* RegistrationView.m */; };
+		67F541801DAD01B100DF0ACE /* GlobalVars.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F5417F1DAD01B100DF0ACE /* GlobalVars.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +38,17 @@
 /* Begin PBXFileReference section */
 		6702D5EC1DA69CE90025D659 /* Pickerview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pickerview.h; sourceTree = "<group>"; };
 		6702D5ED1DA69CE90025D659 /* Pickerview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pickerview.m; sourceTree = "<group>"; };
+		6715137F1DAA91C000FC0E26 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		671513801DAA91C000FC0E26 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		67595F4F1DA95F750023B31D /* SearchInTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchInTable.h; sourceTree = "<group>"; };
 		67595F501DA95F750023B31D /* SearchInTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInTable.m; sourceTree = "<group>"; };
 		676DA0601DA69C320061B18C /* Gym.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gym.h; sourceTree = "<group>"; };
 		676DA0611DA69C3B0061B18C /* Gym.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gym.m; sourceTree = "<group>"; };
+		6790831A1DAECF1D006DA5E7 /* LogInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInView.h; sourceTree = "<group>"; };
+		6790831B1DAECF1D006DA5E7 /* LogInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInView.m; sourceTree = "<group>"; };
+		6790831D1DAFBB8D006DA5E7 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		6790831E1DAFBB8D006DA5E7 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		679083201DAFBBFC006DA5E7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		67A1B6991DA57B9F002DFB08 /* FinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A1B69D1DA57B9F002DFB08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67A1B69E1DA57B9F002DFB08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +64,8 @@
 		67A1B6B81DA57B9F002DFB08 /* FinalAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinalAppTests.m; sourceTree = "<group>"; };
 		67A1B6C51DA58611002DFB08 /* RegistrationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationView.h; sourceTree = "<group>"; };
 		67A1B6C61DA58611002DFB08 /* RegistrationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationView.m; sourceTree = "<group>"; };
+		67F5417E1DAD01B100DF0ACE /* GlobalVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVars.h; sourceTree = "<group>"; };
+		67F5417F1DAD01B100DF0ACE /* GlobalVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVars.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679083211DAFBBFC006DA5E7 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,7 @@
 		67A1B6901DA57B9F002DFB08 = {
 			isa = PBXGroup;
 			children = (
+				679083201DAFBBFC006DA5E7 /* MapKit.framework */,
 				67A1B69B1DA57B9F002DFB08 /* FinalApp */,
 				67A1B6B51DA57B9F002DFB08 /* FinalAppTests */,
 				67A1B69A1DA57B9F002DFB08 /* Products */,
@@ -93,6 +109,12 @@
 		67A1B69B1DA57B9F002DFB08 /* FinalApp */ = {
 			isa = PBXGroup;
 			children = (
+				6790831D1DAFBB8D006DA5E7 /* MapView.h */,
+				6790831E1DAFBB8D006DA5E7 /* MapView.m */,
+				6790831A1DAECF1D006DA5E7 /* LogInView.h */,
+				6790831B1DAECF1D006DA5E7 /* LogInView.m */,
+				67F5417E1DAD01B100DF0ACE /* GlobalVars.h */,
+				67F5417F1DAD01B100DF0ACE /* GlobalVars.m */,
 				67595F4F1DA95F750023B31D /* SearchInTable.h */,
 				67595F501DA95F750023B31D /* SearchInTable.m */,
 				6702D5EC1DA69CE90025D659 /* Pickerview.h */,
@@ -100,8 +122,10 @@
 				67A1B6C51DA58611002DFB08 /* RegistrationView.h */,
 				67A1B6C61DA58611002DFB08 /* RegistrationView.m */,
 				67A1B6A01DA57B9F002DFB08 /* AppDelegate.h */,
-				676DA0611DA69C3B0061B18C /* Gym.m */,
+				6715137F1DAA91C000FC0E26 /* User.h */,
+				671513801DAA91C000FC0E26 /* User.m */,
 				676DA0601DA69C320061B18C /* Gym.h */,
+				676DA0611DA69C3B0061B18C /* Gym.m */,
 				67A1B6A11DA57B9F002DFB08 /* AppDelegate.m */,
 				67A1B6A31DA57B9F002DFB08 /* ViewController.h */,
 				67A1B6A41DA57B9F002DFB08 /* ViewController.m */,
@@ -241,11 +265,15 @@
 			files = (
 				67595F511DA95F750023B31D /* SearchInTable.m in Sources */,
 				67A1B6A51DA57B9F002DFB08 /* ViewController.m in Sources */,
+				6790831C1DAECF1D006DA5E7 /* LogInView.m in Sources */,
+				671513811DAA91C000FC0E26 /* User.m in Sources */,
 				6702D5EE1DA69CE90025D659 /* Pickerview.m in Sources */,
 				67A1B6A21DA57B9F002DFB08 /* AppDelegate.m in Sources */,
 				67A1B69F1DA57B9F002DFB08 /* main.m in Sources */,
 				676DA0621DA69C3B0061B18C /* Gym.m in Sources */,
+				67F541801DAD01B100DF0ACE /* GlobalVars.m in Sources */,
 				67A1B6C71DA58611002DFB08 /* RegistrationView.m in Sources */,
+				6790831F1DAFBB8D006DA5E7 /* MapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +418,6 @@
 		67A1B6C01DA57B9F002DFB08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -409,7 +436,6 @@
 		67A1B6C11DA57B9F002DFB08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

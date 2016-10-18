@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 
-
+@property NSURLConnection *postConnection;
 
 @property (nonatomic, strong) NSMutableArray* filteredString;
 
@@ -33,5 +33,6 @@
 @property (nonatomic, strong) NSArray *totalArray;
 
 @property (nonatomic, strong) NSMutableDictionary *json;
+@property (nonatomic, strong) NSMutableDictionary *json1;
 
 @end

@@ -8,15 +8,20 @@
 
 #import "RegistrationView.h"
 #import "Pickerview.h"
+#import "User.h"
+#import "GlobalVars.h"
+
 
 @implementation RegistrationView
 
-@synthesize UserName, UserPassword,Firstname,Lastname,Address,PhoneNumber,Trainer,Grender,EmailAddress;
+@synthesize UserName, UserPassword,Firstname,Lastname,Address,PhoneNumber,Trainer,Grender,EmailAddress, jjson,userArray;
+
 
 
 
 - (IBAction)Registration:(UIButton *)sender {
-
+   
+    
     NSString *swGrender, *swTrainer;
 
     if ([Grender isOn]) {
@@ -26,6 +31,10 @@
     if ([Trainer isOn]) {
         swTrainer = @"1";
     }   else swTrainer = @"0";
+    
+    
+     [GlobalVars setUser_Name: UserName.text];
+   
     
     NSDictionary *inputData = [NSDictionary dictionaryWithObjectsAndKeys :
                                Firstname.text, @"Firstname",
@@ -55,12 +64,40 @@
         NSError *err;
         NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
         
-        
-        
+    [self getRegisteredUserID];
+    
         
 
     
 }
+
+- (void) getRegisteredUserID{
+    
+    
+    NSURL * url = [ NSURL URLWithString: @"http://users.atw.hu/pelda-service/app/UsersInGym/getUserId.php"];
+    
+    NSData *data = [NSData dataWithContentsOfURL: url];
+    
+    jjson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    userArray = [[NSMutableArray alloc]init];
+   
+    
+    for (NSMutableDictionary *d in [jjson objectForKey:@"response"]) {
+        
+       
+        
+        User *actUser = [[User alloc] initWithGetUserID:[d objectForKey:@"User_id"] andUserName:[d objectForKey:@"Username"]];
+        
+  if ([actUser.userName isEqualToString:[GlobalVars getUser_name]]) {
+           [GlobalVars setUser_ID:actUser.userID ];
+      NSLog(@"userid: %@", [GlobalVars getUser_ID]);
+        }
+      }
+
+
+}
+
 
 - (IBAction)process:(UIButton *)sender {
     
